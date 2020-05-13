@@ -67,11 +67,10 @@ public class WorldFamousExplorerLikesMazeToExistToNavigateIt extends MazeTestBas
 			private static final long serialVersionUID = 1L;
 			{ 
                 add(" "); 
-                add("X"); 
                 add("F"); 
             } 
         }; 
-		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isIn(validCellValuesAfterStart);
+		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isIn(validCellValuesAfterStart);	
 		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isIn(validCellValuesAfterStart);
 		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.EAST, myMaze).getValue()).isIn(validCellValuesAfterStart);
 		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isIn(validCellValuesAfterStart);
