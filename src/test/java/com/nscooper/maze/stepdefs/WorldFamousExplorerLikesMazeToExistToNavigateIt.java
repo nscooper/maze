@@ -63,13 +63,10 @@ public class WorldFamousExplorerLikesMazeToExistToNavigateIt extends MazeTestBas
 
 	@Then("An explorer on a maze must be able to declare all movement options from their given location")
 	public void an_explorer_on_a_maze_must_be_able_to_declare_all_movement_options_from_their_given_location() {
-		List<String> validCellValuesAfterStart = new ArrayList<String>() { 
-			private static final long serialVersionUID = 1L;
-			{ 
-                add(" "); 
-                add("F"); 
-            } 
-        }; 
+		List<String> validCellValuesAfterStart = new ArrayList<>(); 
+        validCellValuesAfterStart.add(" ");
+        validCellValuesAfterStart.add("F");
+        
 		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isNotIn(validCellValuesAfterStart);	
 		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.SOUTH, myMaze).getValue()).isNotIn(validCellValuesAfterStart);
 		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.EAST, myMaze).getValue()).isIn(validCellValuesAfterStart);
