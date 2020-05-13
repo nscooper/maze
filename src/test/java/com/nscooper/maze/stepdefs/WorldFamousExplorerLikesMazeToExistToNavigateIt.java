@@ -70,10 +70,10 @@ public class WorldFamousExplorerLikesMazeToExistToNavigateIt extends MazeTestBas
                 add("F"); 
             } 
         }; 
-		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isIn(validCellValuesAfterStart);	
-		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isIn(validCellValuesAfterStart);
+		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isNotIn(validCellValuesAfterStart);	
+		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.SOUTH, myMaze).getValue()).isNotIn(validCellValuesAfterStart);
 		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.EAST, myMaze).getValue()).isIn(validCellValuesAfterStart);
-		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.NORTH, myMaze).getValue()).isIn(validCellValuesAfterStart);
+		assertThat(mazeExplorer.getNewCellDetails(myMaze.getStartPoint(), Direction.WEST, myMaze).getValue()).isNotIn(validCellValuesAfterStart);
 	}
 
 	@Then("An explorer on a maze must be able to report a record of where they have been in an understandable fashion")
